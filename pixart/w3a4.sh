@@ -1,0 +1,1 @@
+python ptq_inference.py --quant-config "./configs/w3a4.yaml" --log "./logs/w3a4" --gptq --prompt 'assets/coco_1024.txt'

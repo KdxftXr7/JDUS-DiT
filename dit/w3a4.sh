@@ -1,0 +1,1 @@
+python ptq_inference.py --image-size 256 --seed 42 --num-sampling-steps 100 --ptq-config "./configs/w3a4.yaml" --log "./logs/w3a4" --cfg-scale 1.5 --gptq
