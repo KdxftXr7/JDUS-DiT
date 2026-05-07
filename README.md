@@ -13,7 +13,7 @@ cd JDUS-dit
 Create the environment and install the required packages:
 
 ```bash
-conda create -n JDUS-dit python=3.10
+conda create -n JDUS-dit python=3.11
 conda activate JDUS-dit
 pip install -r requirements.txt
 ```
