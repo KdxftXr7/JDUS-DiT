@@ -260,13 +260,8 @@ def is_pow2(n):
 
 
 def get_had144():
-    # d = torch.load('./hadamard_utils/hadamard_mat.pth', weights_only=True)
-    # d = torch.load('hadamard_utils/hadamard_mat.pth', weights_only=True)
-    # 获取当前文件（quarot_utils.py）的目录路径
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    # 拼接hadamard_mat.pth的路径
     file_path = os.path.join(current_dir, 'hadamard_utils/hadamard_mat.pth')
-    # 加载文件
     d = torch.load(file_path, weights_only=True)
     x = d['had.144.tpal']
     return x
