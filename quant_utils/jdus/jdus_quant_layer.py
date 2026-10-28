@@ -46,7 +46,7 @@ class JdusQuantizedLinear(QuantizedLinear):
 
             max_X = np.clip(np.percentile(np.abs(X_tmp_t.cpu().numpy()), 99.5, axis=0), a_min=1e-5, a_max=None)
             max_W = np.clip(np.percentile(np.abs(W_tmp_t.cpu().numpy()), 99.5, axis=0), a_min=1e-5, a_max=None)
-            S_diag = (max_W ** self.alpha) / (max_X ** self.alpha)
+            S_diag = (max_W ** self.alpha) / (max_X ** (1.0 - self.alpha))
             G_balanced = torch.from_numpy(G_clipped * S_diag[np.newaxis, :]).to(device, dtype=torch.float64)
         self.jdus_matrix = torch.matmul(G_balanced.double(), self.hadamard_matrix)
         self.weight_rotation_matrix = torch.inverse(self.jdus_matrix).t()
